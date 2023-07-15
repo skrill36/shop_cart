@@ -23,9 +23,22 @@ const ShopCards = (props) => {
           alt={props.alt}
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            {props.title}
-          </Typography>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+            }}
+          >
+            <span>
+              <Typography gutterBottom variant="h5" component="div">
+                {props.title}
+              </Typography>
+            </span>
+            <span>
+              <h3>₹{props.price}</h3>
+            </span>
+          </div>
           <Typography
             variant="body2"
             color="text.secondary"
