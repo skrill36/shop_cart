@@ -14,11 +14,9 @@
 
 .div {
   width: 80%;
-
   text-align: center;
-  margin: 5rem auto;
-  padding: 2rem 0;
-
+  margin: 1.5rem auto;
+  padding: 2rem 2rem;
   color: #ededed;
 }
 
