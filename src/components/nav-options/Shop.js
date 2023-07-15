@@ -1,5 +1,7 @@
+import CartButton from "../UI/CartButton";
 import ShopCards from "../UI/ShopCards";
 import style from "./Shop.module.css";
+import { useState } from "react";
 
 const DUMMY_DATA = [
   {
@@ -84,20 +86,32 @@ const DUMMY_DATA = [
 ];
 
 const Shop = () => {
+  const [itemsCount, setItemsCount] = useState(0);
+
+  const addToCartHandler = () => {
+    setItemsCount((prev) => prev + 1);
+  };
+
   return (
-    <div className={style.shopcard}>
-      {DUMMY_DATA.map((item) => {
-        return (
-          <ShopCards
-            title={item.title}
-            typo={item.desc}
-            img={item.image}
-            alt={item.alt}
-            key={item.id}
-          />
-        );
-      })}
-    </div>
+    <>
+      <div>
+        <CartButton items={itemsCount}></CartButton>
+      </div>
+      <div className={style.shopcard}>
+        {DUMMY_DATA.map((item) => {
+          return (
+            <ShopCards
+              title={item.title}
+              typo={item.desc}
+              img={item.image}
+              alt={item.alt}
+              key={item.id}
+              onAddToCart={addToCartHandler}
+            />
+          );
+        })}
+      </div>
+    </>
   );
 };
 

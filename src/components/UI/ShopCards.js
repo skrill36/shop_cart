@@ -44,7 +44,12 @@ const ShopCards = (props) => {
         <Button size="medium" variant="contained" color="success">
           Buy Now
         </Button>
-        <Button size="medium" variant="outlined" color="error">
+        <Button
+          size="medium"
+          variant="outlined"
+          color="error"
+          onClick={props.onAddToCart}
+        >
           Add to Cart
         </Button>
       </CardActions>
